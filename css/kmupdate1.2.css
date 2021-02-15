@@ -2012,20 +2012,7 @@ font-weight:bold;
 background: #25a186;
 color: #fff;
 }
-  .button1 {background-color: #55555}
-.button1 {
-border: none;
-color: white;
-padding: 15px 32px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 18px;
-margin: 4px 2px;
-cursor: pointer;
-width:97%;
-font-weight:bolder;
-}
+
 
 /*------------ tampilan komputer -------------*/
 @media only screen and ( min-width: 768px)

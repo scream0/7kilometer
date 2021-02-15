@@ -839,88 +839,313 @@ input.border-bawah:focus, textarea.border-bawah:focus
 	box-shadow : -0px 2px 9px rgba(0,233,175,.5);
 }
 
-/* pre code & syntax highlighter */
+/*-------------- Pre code untuk syntax highlighter dan chords -------------------*/
+
 pre
 {
-	background-color : var(--pre-code-bg-color);
-	border-left : 5px solid var(--pre-code-border-color);
-	padding : 0;
-	margin : .5em auto;
+	padding : 50px 10px 10px 10px;
+	margin : .5em 0;
 	white-space : pre;
 	word-wrap : break-word;
 	overflow : auto;
+	background-color : #374760;
 	position : relative;
-	width : 100%;
-	-moz-tab-size : 2;
-	-o-tab-size : 2;
-	tab-size : 2;
-	word-break : normal;
-	user-select : text;
-	-webkit-user-select : text;
-	-khtml-user-select : text;
-	-moz-user-select : text;
-	-ms-user-select : text;
-	user-select : text;
-	-webkit-hyphens : none;
-	-moz-hyphens : none;
-	-ms-hyphens : none;
-	hyphens : none;
+	border-radius : 4px;
+	max-height : 500px;
+}
+
+pre::before
+{
+	font-size : 16px;
+	content : attr(title);
+	position : absolute;
+	top : 0;
+	background-color : #eee;
+	padding : 10px;
+	left : 0;
+	right : 0;
+	color : #fff;
+	text-transform : uppercase;
+	display : block;
+	margin : 0 0 15px 0;
+	font-weight : bold;
+}
+
+pre::after
+{
+	content : '</>';
+	padding : 2px 10px;
+	width : auto;
+	height : auto;
+	position : absolute;
+	right : 8px;
+	top : 8px;
+	color : #fff;
+	line-height : 20px;
+	transition : all 0.3s ease-in-out;
+}
+
+code
+{
+	font-family : Consolas,Monaco,' Andale Mono','Courier New',Courier,Monospace;
+	line-height : 16px;
+	color : #88a9ad;
+	background-color : transparent;
+	padding : 1px 2px;
+	font-size : 12px;
 }
 
 pre code
 {
-	color : var(--pre-code-font-color);
-	font-size : 12px;
-	line-height : 1.5em;
 	display : block;
 	background : none;
 	border : none;
-	padding : 10px 15px;
-	font-family : 'source code pro',menlo,consolas,monaco,monospace;
-	white-space : pre-wrap;
-	overflow : auto;
-	user-select : text;
-	-webkit-user-select : text;
-	-khtml-user-select : text;
-	-moz-user-select : text;
-	-ms-user-select : text;
-	user-select : text;
+	color : var(--pre-code-font-color);
+	 border-left : 5px solid var(--pre-code-border-color);
+	direction : ltr;
+	text-align : left;
+	word-spacing : normal;
+	padding : 0 0;
+	font-weight : bold;
 }
 
-[syntax="highlighter"]
+code .token.punctuation
 {
-	font-size : 12px;
-	line-height : 1.5em;
-	margin : .5em auto;
-	white-space : pre;
-	word-wrap : break-word;
-	-moz-tab-size : 2;
-	-o-tab-size : 2;
-	tab-size : 2;
-	word-break : normal;
-	user-select : text;
-	-webkit-user-select : text;
-	-khtml-user-select : text;
-	-moz-user-select : text;
-	-ms-user-select : text;
-	user-select : text;
-	-webkit-hyphens : none;
-	-moz-hyphens : none;
-	-ms-hyphens : none;
-	hyphens : none;
-	border : none;
-	padding : 10px 15px;
-	font-family : 'source code pro',menlo,consolas,monaco,monospace;
-	white-space : pre-wrap;
-	overflow : auto;
-	user-select : text;
-	-webkit-user-select : text;
-	-khtml-user-select : text;
-	-moz-user-select : text;
-	-ms-user-select : text;
-	user-select : text;
+	color : #ccc;
 }
 
+pre code .token.punctuation
+{
+	color : #fafafa;
+}
+
+code .token.comment, code .token.prolog, code .token.cdata, code .token.doctype
+{
+	color : #777;
+}
+
+code .namespace
+{
+	opacity : .8;
+}
+
+code .token.property, code .token.tag, code .token.boolean, code .token.number
+{
+	color : #e5dc56;
+}
+
+code .token.selector, code .token.attr-name, code .token.string
+{
+	color : #88a9ad;
+}
+
+pre code .token.selector, pre code .token.attr-name
+{
+	color : #fafafa;
+}
+
+pre code .token.string
+{
+	color : #40ee46;
+}
+
+pre .language-css .token.string, pre .style .token.string, code .token.entity, code .token.url
+{
+	color : #ccc;
+}
+
+code .token.operator
+{
+	color : #1887dd;
+}
+
+code .token.attr-value, code .token.atrule
+{
+	color : #009999;
+}
+
+pre code .token.atrule, pre code .token.attr-value
+{
+	color : #1baeb0;
+}
+
+code .token.keyword
+{
+	color : #e13200;
+	font-style : italic;
+}
+
+code .token.comment
+{
+	font-style : italic;
+}
+
+code .token.regex
+{
+	color : #ccc;
+}
+
+code .token.important
+{
+	font-weight : bold;
+}
+
+code .token.entity
+{
+	cursor : help;
+}
+
+pre mark
+{
+	background-color : #ea4f4e!important;
+	color : #fff!important;
+	padding : 2px;
+	border-radius : 2px;
+}
+
+code mark
+{
+	background-color : #ea4f4e!important;
+	color : #fff!important;
+	padding : 2px;
+	border-radius : 2px;
+}
+
+pre code mark
+{
+	background-color : #ea4f4e!important;
+	color : #fff!important;
+	padding : 2px;
+	border-radius : 2px;
+}
+
+.comments pre
+{
+	padding : 10px 10px 15px 10px;
+	background : #2c323c;
+}
+
+.comments pre::before
+{
+	content : 'Code';
+	font-size : 13px;
+	position : relative;
+	top : 0;
+	background-color : #f56954;
+	padding : 3px 10px;
+	left : 0;
+	right : 0;
+	color : #fff;
+	text-transform : uppercase;
+	display : inline-block;
+	margin : 0 0 10px 0;
+	font-weight : bold;
+	border-radius : 4px;
+	border : none;
+}
+
+.comments pre::after
+{
+	font-size : 11px;
+}
+
+.comments pre code
+{
+	color : #eee;
+}
+
+.comments pre.line-numbers
+{
+	padding-left : 10px;
+}
+
+pre.line-numbers
+{
+	position : relative;
+	padding-left : 3.0em;
+	counter-reset : linenumber;
+}
+
+pre.line-numbers > code
+{
+	position : relative;
+}
+
+.line-numbers .line-numbers-rows
+{
+	height : 100%;
+	position : absolute;
+	pointer-events : none;
+	top : 0;
+	font-size : 100%;
+	left : -3.5em;
+	width : 3em;
+	-webkit-user-select : none;
+	-moz-user-select : none;
+	-ms-user-select : none;
+	padding : 0;
+}
+
+.line-numbers-rows > span
+{
+	pointer-events : none;
+	display : block;
+	counter-increment : linenumber;
+}
+
+.line-numbers-rows > span:before
+{
+	content : counter(linenumber);
+	color : #999;
+	display : block;
+	padding-right : 0.8em;
+	text-align : right;
+	transition : 350ms;
+}
+
+pre[data-codetype='HTMLku']:before
+{
+	background-color : #3cc888;
+}
+
+pre[data-codetype='CSSku']:before
+{
+	background-color : #00a1d6;
+}
+
+pre[data-codetype='JQueryku']:before
+{
+	background-color : #e5b460;
+}
+
+pre[data-codetype='JavaScriptku']:before
+{
+	background-color : #75d6d0;
+}
+
+pre[data-codetype='PHPku']:before
+{
+	background-color : #75d6d0;
+}
+
+pre::after
+{
+	content : " DOUBLE CLICK TO SELECTION ";
+	padding : 0;
+	width : auto;
+	height : auto;
+	position : absolute;
+	right : 18px;
+	top : 10px;
+	font-size : 12px;
+	color : #fff;
+	border : 1px solid #fff;
+	border-radius : 4px;
+	line-height : 20px;
+	overflow : hidden;
+	-webkit-backface-visibility : hidden;
+	transition : all 0.3s ease;
+}
 /*----------------- Tombol --------------*/
 button
 {

@@ -7,17 +7,122 @@
 
 <title>Scream0</title>
 <style type='text/css'>
+/*-----------------------------KM-------------------------
+Name		: KM CSS PROJECT
+Author		: Karim M
+E-mail		: cimohcihui@gmail.com / karim.muhaimin7@gmail.com
+language	: Indonesia and English
+---------*/
+:root {
+--default-font-color: #222222;
+--default-bg-color: #ffffff;
+--kontrol-formulir-font-color: #666666;
+--kontrol-formulir-bg-color: #f5f5f5;
+--bg-header-color: #3284ef;
+--bg-bodi-color: #fdfdfd;
+--bg-footer-color: #34495e;
+--bg-merah: #ff3284;
+--bg-kuning: #ff8432;
+--bg-hijau: #84ff32;
+--bg-alert-info: #007a00;
+--bg-alert-error: #c50000;
+--bg-alert-sukses: #0000c5;
+--bg-legend: #3284ff;
+--bg-menu-baris: #efefef;
+--bg-menu-baris-menucolor: #ff3424;
+--link-color: #00bbff;
+--link-color-visited: #994cff;
+--link-color-hover: #4c4cff;
+--blok-text-color: #808080;
+--blok-text-bgcolor: #e5e5e5;
+--default-border-shadow-color: #cccccc;
+--border-shadow-color: #00933b;
+--border-shadow-color-focus: #26b14c;
+--pre-code-font-color: #40bfbf;
+--pre-code-bg-color: #292e34;
+--pre-code-border-color: #2fbb00;
+--custom-radio-checkbox-checkmark-color: #26b144;
+--modal-bgcolor: #009900;
+--tomboldefault-bgcolor: #eeeeee;
+}
+
+[data-theme="dark"] {
+--default-font-color: #ffffff;
+--default-bg-color: #292e34;
+--kontrol-formulir-font-color: #f5f5f5;
+--kontrol-formulir-bg-color: #292929;
+--bg-header-color: #3e3e3e;
+--bg-bodi-color: #2d2d2d;
+--bg-footer-color: #34495e;
+--bg-merah: #ff3284;
+--bg-kuning: #ff8432;
+--bg-hijau: #84ff32;
+--bg-alert-info: #007a00;
+--bg-alert-error: #c50000;
+--bg-alert-sukses: #0000c5;
+--bg-legend: #3284ff;
+--bg-menu-baris: #f4f4f4;
+--bg-menu-baris-menucolor: #ff3424;
+--link-color: #00bbff;
+--link-color-visited: #994cff;
+--link-color-hover: #4c4cff;
+--blok-text-color: #efef90;
+--blok-text-bgcolor: #4e4e4e;
+--default-border-shadow-color: #cccccc;
+--border-shadow-color: #2196fa;
+--border-shadow-color-focus: #2196ff;
+--pre-code-font-color: #40bfbf;
+--pre-code-bg-color: #292e34;
+--pre-code--border-color: #2fbb00;
+--custom-radio-checkbox-checkmark-color: #2196f3;
+--modal-bgcolor: #003e00;
+--tomboldefault-bgcolor: #808080;
+}
+
+[name="theme-color"]{
+content=var(--default-bg-color);
+}
+
+*
+{
+	margin : 0;
+	-webkit-box-sizing : border-box;
+	-moz-box-sizing : border-box;
+	box-sizing : border-box;
+}
+
+*:before, *:after
+{
+	-webkit-box-sizing : border-box;
+	-moz-box-sizing : border-box;
+	box-sizing : border-box;
+}
+
+html
+{
+	font-size : 15px;
+	-webkit-tap-highlight-color : rgba(0, 0, 0, 0);
+}
+
+body
+{
+	font-family : "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size : 15px;
+	line-height : 1.42857143;
+	color : var(--default-font-color);
+	background-color : var(--default-bg-color);
+	min-height : 250px;
+	background-attachment : fixed;
+	background-position : center;
+	background-repeat : no repeat;
+	background-size : cover;
+	scrolling : no;
+	scrollbar : no;
+}
+
+
 
 /*------- Navigation ------*/
-  * {
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0;
-        }
-
-        body {
-            font-family: 'Josefin Sans', sans-serif;
-        }
 
         .navbar {
             font-size: 18px;
@@ -62,6 +167,49 @@
             display: block;
         }
         
+        /*----------- Menu strip tiga. Gunakan empat div untuk membuatnya. Div yang pertama berisi class menu-baris, Div yang kedua berisi class baris1, div yang ketiga berisi class baris2, dan div yang keempat berisi class baris3. Jangan lupa gunakan javascript toggle untuk membuat efek.. isi javascript toggle dengan class ganti-baris. ---------------*/
+.menu-baris
+{
+	float : right;
+	padding : 2px 6px;
+	line-height : 1;
+	background-color : var(--bg-menu-baris);
+	border : 1px;
+	border-radius : 5px;
+	display : inline-block;
+	cursor : pointer;
+}
+
+.menu-baris > .menu2, .menu-baris > .menu3, .menu-baris > .menu1
+{
+	width : 27px;
+	height : 4px;
+	background-color : var(--bg-menu-baris-menucolor);
+	margin : 4px 0;
+	-webkit-transition : .4s;
+	transition : .4s;
+}
+
+.ganti-baris .menu1
+{
+	background-color : var(--bg-menu-baris-menucolor);
+	-webkit-transform : rotate(-45deg) translate(-6px, 6px);
+	transform : rotate(-45deg) translate(0
+-6px, 6px);
+}
+
+.ganti-baris .menu2
+{
+	opacity : 0;
+}
+
+.ganti-baris .menu3
+{
+	background-color : var(--bg-menu-baris-menucolor);
+	-webkit-transform : rotate(45deg) translate(-6px, -6px);
+	transform : rotate(45deg) translate(-6px, -6px);
+}
+
       /*-------- wrapper atau pembungkus---------------------*/
 
 #outer-wrapper {background: var(--default-bg-color); width: 98%; padding: 3px; margin: 3px auto;}
@@ -132,7 +280,12 @@
         <span class="navbar-toggle" id="js-navbar-toggle">
             <i class="fas fa-bars"></i>
         </span>
-        <a href="#" class="logo">logo</a>
+        <a href="#" class="logo">Scream0</a>
+        <div class="menu-baris">
+            <div class="baris1"></div>
+            <div class="baris2"></div>
+            <div class="baris3"></div>
+        </div>
         <ul class="main-nav" id="js-menu">
             <li>
                 <a href="#" class="nav-links">Home</a>

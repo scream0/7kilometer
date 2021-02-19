@@ -61,8 +61,18 @@
         .active {
             display: block;
         }
+        
+      /*-------- wrapper atau pembungkus---------------------*/
+
+#outer-wrapper {background: var(--default-bg-color); width: 90%; padding: 20px; margin: 20px auto;}
 #header-wrapper {background: var(--default-bg-color); width: 100%; height:auto; margin: 0 auto; border:1px solid #eaeaea;}
-#sidebar-wrapper {background: transparent; width:30%; float:right; border:1px solid #eaeaea; margin:10px 0;}
+#sidebar-wrapper {display:none;}
+#content-wrapper {background: transparent; width:65%; float:left; border:1px solid #eaeaea; margin:10px 0;}
+#footer-wrapper {background:transparent; width:100%; border:1px solid #eaeaea; margin:10px 0;}
+        }
+/*-------- Biar layout tidak tumpang tindih -------*/
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: &quot; &quot;; clear: both; height: 0;}
+
 /*------------- Desktop atau Komputer ------------*/
         @media screen and (min-width: 768px) {
             .navbar {
@@ -104,13 +114,15 @@
                /*-------- wrapper atau pembungkus---------------------*/
 
 #outer-wrapper {background: var(--default-bg-color); width: 90%; padding: 20px; margin: 20px auto;}
+#header-wrapper {background: var(--default-bg-color); width: 100%; height:auto; margin: 0 auto; border:1px solid #eaeaea;}
+#sidebar-wrapper {background: transparent; width:30%; float:right; border:1px solid #eaeaea; margin:10px 0;}
 #content-wrapper {background: transparent; width:65%; float:left; border:1px solid #eaeaea; margin:10px 0;}
 #footer-wrapper {background:transparent; width:100%; border:1px solid #eaeaea; margin:10px 0;}
+
         }
+/*---------- End of Desktop ---------*/
 
 
-/*-------- Biar tatanan tidak tumpang tindih -------*/
-.clearfix:after {visibility: hidden; display: block; font-size: 0; content: &quot; &quot;; clear: both; height: 0;}
 </style>
 </head>
 <body>

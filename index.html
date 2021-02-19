@@ -16,6 +16,7 @@ language	: Indonesia and English
 :root {
 --default-font-color: #222222;
 --default-bg-color: #ffffff;
+--default-bg-color-image:linear-gradient(260deg, #23ae76 0%, #006ecf 100%);
 --kontrol-formulir-font-color: #666666;
 --kontrol-formulir-bg-color: #f5f5f5;
 --bg-header-color: #3284ef;
@@ -49,6 +50,7 @@ language	: Indonesia and English
 [data-theme="dark"] {
 --default-font-color: #ffffff;
 --default-bg-color: #292e34;
+--default-bg-color-image: linear-gradient(260deg, #290034 0%, #292e34 100%);
 --kontrol-formulir-font-color: #f5f5f5;
 --kontrol-formulir-bg-color: #292929;
 --bg-header-color: #3e3e3e;
@@ -79,9 +81,6 @@ language	: Indonesia and English
 --tomboldefault-bgcolor: #808080;
 }
 
-[name="theme-color"]{
-content=var(--default-bg-color);
-}
 
 *
 {
@@ -112,6 +111,7 @@ body
 	color : var(--default-font-color);
 	background-color : var(--default-bg-color);
 	min-height : 250px;
+	background-image: var(--default-bg-color-image);
 	background-attachment : fixed;
 	background-position : center;
 	background-repeat : no repeat;
@@ -123,10 +123,10 @@ body
 
 
 /*------- Navigation ------*/
-
         .navbar {
+            position: relative;
             font-size: 18px;
-            background-image: linear-gradient(260deg, #2376ae 0%, #c16ecf 100%);
+            background-image: var(--default-bg-color-image);
             border: 1px solid rgba(0, 0, 0, 0.2);
             padding-bottom: 10px;
         }
@@ -151,65 +151,160 @@ body
             display: inline-block;
             font-size: 22px;
             margin-top: 10px;
-            margin-left: 20px;
+            margin-left: 20px; 
         }
 
-        .navbar-toggle {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            cursor: pointer;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 24px;
-        }
 
+       .navbar .toggler-navbar {
+         display: flex;
+    
+}    
         .active {
             display: block;
         }
         
-        /*----------- Menu strip tiga. Gunakan empat div untuk membuatnya. Div yang pertama berisi class menu-baris, Div yang kedua berisi class baris1, div yang ketiga berisi class baris2, dan div yang keempat berisi class baris3. Jangan lupa gunakan javascript toggle untuk membuat efek.. isi javascript toggle dengan class ganti-baris. ---------------*/
-.menu-baris
-{
-	float : right;
-	padding : 2px 6px;
-	line-height : 1;
-	background-color : var(--bg-menu-baris);
-	border : 1px;
-	border-radius : 5px;
-	display : inline-block;
-	cursor : pointer;
+        /*----------- Hamburger menu ---------*/: 
+
+
+.hamburger-menu {
+    
+    width: 30px;
+    height: 30px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
 }
 
-.menu-baris > .menu2, .menu-baris > .menu3, .menu-baris > .menu1
-{
-	width : 27px;
-	height : 4px;
-	background-color : var(--bg-menu-baris-menucolor);
-	margin : 4px 0;
-	-webkit-transition : .4s;
-	transition : .4s;
+.hamburger-menu span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
 }
 
-.ganti-baris .menu1
-{
-	background-color : var(--bg-menu-baris-menucolor);
-	-webkit-transform : rotate(-45deg) translate(-6px, 6px);
-	transform : rotate(-45deg) translate(0
--6px, 6px);
+.hamburger-menu span:nth-child(1) {
+    top: 2.5px;
 }
 
-.ganti-baris .menu2
-{
-	opacity : 0;
+.hamburger-menu span:nth-child(2) {
+    top: 11px;
 }
 
-.ganti-baris .menu3
-{
-	background-color : var(--bg-menu-baris-menucolor);
-	-webkit-transform : rotate(45deg) translate(-6px, -6px);
-	transform : rotate(45deg) translate(-6px, -6px);
+.hamburger-menu span:nth-child(3) {
+    top: 21px;
 }
 
+.hamburger-menu.open span:nth-child(1) {
+    top: 15px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+.hamburger-menu.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+
+.hamburger-menu.open span:nth-child(3) {
+    top: 14px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+
+
+/*---- tombol ganti tema ----- */
+.theme-switch-wrapper {
+display: flex;
+align-items: center;
+
+em {
+margin-left: 10px;
+font-size: 1rem;
+}
+} 
+/*--- toogle switch slider --- */
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 32px;
+  height: 16px; 
+margin: 3px 6px;
+}
+
+.theme-switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 10px;
+  width: 10px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 10px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
       /*-------- wrapper atau pembungkus---------------------*/
 
 #outer-wrapper {background: var(--default-bg-color); width: 98%; padding: 3px; margin: 3px auto;}
@@ -250,7 +345,7 @@ body
                 margin-top: 0;
             }
 
-            .navbar-toggle {
+            .navbar .toggler-navbar {
                 display: none;
             }
 
@@ -277,15 +372,20 @@ body
 <div id='outer-wrapper'>
 <div id='header-wrapper'>
 <nav class="navbar">
-        <span class="navbar-toggle" id="js-navbar-toggle">
-            <i class="fas fa-bars"></i>
-        </span>
+  <a class="toggler-navbar">
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </a>
         <a href="#" class="logo">Scream0</a>
-        <div class="menu-baris">
-            <div class="baris1"></div>
-            <div class="baris2"></div>
-            <div class="baris3"></div>
-        </div>
+<div class="theme-switch-wrapper">
+<label class="theme-switch" for="checkbox">
+<input type="checkbox" id="checkbox" />
+<div class="slider round"></div>
+</label>
+</div>
         <ul class="main-nav" id="js-menu">
             <li>
                 <a href="#" class="nav-links">Home</a>
@@ -303,9 +403,12 @@ body
                 <a href="#" class="nav-links">Blog</a>
             </li>
         </ul>
+        
     </nav>
+    
 </div>
 <div class='clearfix'/>
+
 <div id='content-wrapper'>
 <p>Main Content</p>
 </div>
@@ -314,16 +417,47 @@ body
 </div>
 <div class='clearfix'/>
 <div id='footer-wrapper'>
+   
 <p>Footer</p>
 </div>
 </div>
 <script type="text/javascript">
-var mainNav = document.getElementById('js-menu');
-var navBarToggle = document.getElementById('js-navbar-toggle');
+document.getElementsByClassName('toggler-navbar')[0].addEventListener('click', toogleClass);
 
-navBarToggle.addEventListener('click', function () {
-  mainNav.classList.toggle('active');
-});
+function toogleClass() {
+    document.getElementsByClassName('hamburger-menu')[0].classList.toggle('open')
+    document.getElementsByClassName('main-nav')[0].classList.toggle('active')
+}
+b
+
+</script>
+<!-- toogle light/dark -->
+<script type='text/javascript'>
+
+const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+  
+    if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+    }
+}
+
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    }
+    else {        document.documentElement.setAttribute('data-theme', 'light');
+          localStorage.setItem('theme', 'light');
+    }    
+}
+
+toggleSwitch.addEventListener('change', switchTheme, false);
+
+
 </script>
 </body>
 </HTML>  

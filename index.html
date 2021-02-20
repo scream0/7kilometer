@@ -37,7 +37,7 @@ language	: Indonesia and English
 --blok-text-color: #808080;
 --blok-text-bgcolor: #e5e5e5;
 --default-border-shadow-color: #cccccc;
---border-wrapper-color: 1px solid #eaeaea;
+--border-wrapper-color: 1px solid #23ae76;
 --border-shadow-color: #00933b;
 --border-shadow-color-focus: #26b14c;
 --pre-code-font-color: #40bfbf;
@@ -72,7 +72,7 @@ language	: Indonesia and English
 --blok-text-color: #efef90;
 --blok-text-bgcolor: #4e4e4e;
 --default-border-shadow-color: #cccccc;
---border-wrapper-color:1px solid #230d34;
+--border-wrapper-color:1px solid #230D34;
 --border-shadow-color: #2196fa;
 --border-shadow-color-focus: #2196ff;
 --pre-code-font-color: #40bfbf;
@@ -135,7 +135,8 @@ body
         }
 
         .main-nav {
-    
+        font-size: 15px;
+        
             list-style-type: none;
             display: none;
         }
@@ -151,6 +152,7 @@ body
             padding-top:30px;
             text-align: center;
             margin: 10px auto
+            
         }
 
         .navbar .logo {
@@ -329,8 +331,9 @@ input:checked + .slider:before {
 }
       /*-------- wrapper atau pembungkus---------------------*/
 
-#outer-wrapper {background: transparent; width: 98%; padding: 3px; margin: 3px auto;}
-#header-wrapper, #sidebar-wrapper, #content-wrapper,#footer-wrapper { float:left;background: transparent; width: 100%;height:auto; margin: 10px auto; border:var(--border-wrapper-color);text-align: center;
+#outer-wrapper, #header-wrapper{background: transparent; width: 98%; padding: 3px; margin: 3px auto;}
+#sidebar-wrapper, #content-wrapper,#footer-wrapper { float:left;background: transparent; width: 100%;height:auto; margin: 3px auto; border:var(--border-wrapper-color);text-align: left;
+padding-left: 10px;
         }
 /*-------- Biar layout tidak tumpang tindih -------*/
 .clearfix:after {visibility: hidden; display: block; font-size: 0; content: &quot; &quot;; clear: both; height: 0;}

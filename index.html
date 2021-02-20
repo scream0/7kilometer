@@ -14,7 +14,7 @@ E-mail		: cimohcihui@gmail.com / karim.muhaimin7@gmail.com
 language	: Indonesia and English
 ---------*/
 :root {
---default-font-color: #222222;
+--default-font-color: #f5f5f5;
 --default-bg-color: #ffffff;
 --default-bg-color-image:linear-gradient(260deg, #23ae76 0%, #006ecf 100%);
 --kontrol-formulir-font-color: #666666;
@@ -37,6 +37,7 @@ language	: Indonesia and English
 --blok-text-color: #808080;
 --blok-text-bgcolor: #e5e5e5;
 --default-border-shadow-color: #cccccc;
+--border-wrapper-color: 1px solid #eaeaea;
 --border-shadow-color: #00933b;
 --border-shadow-color-focus: #26b14c;
 --pre-code-font-color: #40bfbf;
@@ -71,6 +72,7 @@ language	: Indonesia and English
 --blok-text-color: #efef90;
 --blok-text-bgcolor: #4e4e4e;
 --default-border-shadow-color: #cccccc;
+--border-wrapper-color:1px solid #230d34;
 --border-shadow-color: #2196fa;
 --border-shadow-color-focus: #2196ff;
 --pre-code-font-color: #40bfbf;
@@ -155,7 +157,7 @@ body
             display: inline-block;
             float: left;
             font-size: 22px;
-            text-align: center;
+            text-align: center; 
         
         }
 
@@ -327,11 +329,8 @@ input:checked + .slider:before {
 }
       /*-------- wrapper atau pembungkus---------------------*/
 
-#outer-wrapper {background: var(--default-bg-color); width: 98%; padding: 3px; margin: 3px auto;}
-#header-wrapper { background: var(--default-bg-color); width: 100%; height:auto; margin: 0 auto; border:1px solid #eaeaea;}
-#sidebar-wrapper {background: transparent; width:30%; border:1px solid #eaeaea; margin:10px 0;}
-#content-wrapper {background: transparent; width:65%; float:left; border:1px solid #eaeaea; margin:10px 0;}
-#footer-wrapper {background:transparent; width:100%; border:1px solid #eaeaea; margin:10px 0;}
+#outer-wrapper {background: transparent; width: 98%; padding: 3px; margin: 3px auto;}
+#header-wrapper, #sidebar-wrapper, #content-wrapper,#footer-wrapper { float:left;background: transparent; width: 100%;height:auto; margin: 10px auto; border:var(--border-wrapper-color);text-align: center;
         }
 /*-------- Biar layout tidak tumpang tindih -------*/
 .clearfix:after {visibility: hidden; display: block; font-size: 0; content: &quot; &quot;; clear: both; height: 0;}
@@ -377,10 +376,10 @@ input:checked + .slider:before {
                /*-------- wrapper atau pembungkus---------------------*/
 
 #outer-wrapper {background: var(--default-bg-color); width: 90%; padding: 20px; margin: 20px auto;}
-#header-wrapper {background: var(--default-bg-color); width: 100%; height:auto; margin: 0 auto; border:1px solid #eaeaea;}
-#sidebar-wrapper {background: transparent; width:30%; float:right; border:1px solid #eaeaea; margin:10px 0;}
-#content-wrapper {background: transparent; width:65%; float:left; border:1px solid #eaeaea; margin:10px 0;}
-#footer-wrapper {background:transparent; width:100%; border:1px solid #eaeaea; margin:10px 0;}
+#header-wrapper {background: var(--default-bg-color); width: 100%; height:auto; margin: 0 auto; border:var(--border-wrapper-color);}
+#sidebar-wrapper {background: transparent; width:30%; float:right; border: var(--border-wrapper-color); margin:10px 0;}
+#content-wrapper {background: transparent; width:65%; float:left; border: var(--border-wrapper-color); margin:10px 0;}
+#footer-wrapper {background:transparent; width:100%; border:var(--border-wrapper-color); margin:10px 0;}
 
         }
 /*---------- End of Desktop ---------*/

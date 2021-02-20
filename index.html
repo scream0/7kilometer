@@ -7,8 +7,8 @@
 
 <title>Scream0</title>
 <style type='text/css'>
-/*-----------------------------KM-------------------------
-Name		: KM CSS PROJECT
+/*---------------------------------------------
+Name		: Scream0 CSS PROJECT
 Author		: Karim M
 E-mail		: cimohcihui@gmail.com / karim.muhaimin7@gmail.com
 language	: Indonesia and English
@@ -124,53 +124,70 @@ body
 
 /*------- Navigation ------*/
         .navbar {
-            position: relative;
+            position: relative ;
+            min-height: 67px;
             font-size: 18px;
             background-image: var(--default-bg-color-image);
             border: 1px solid rgba(0, 0, 0, 0.2);
-            padding-bottom: 10px;
+            padding:10px 14px;
         }
 
         .main-nav {
+    
             list-style-type: none;
             display: none;
         }
 
         .nav-links,
         .logo {
+        
             text-decoration: none;
             color: rgba(255, 255, 255, 0.7);
         }
 
         .main-nav li {
+            padding-top:30px;
             text-align: center;
-            margin: 15px auto;
+            margin: 10px auto
         }
 
-        .logo {
+        .navbar .logo {
             display: inline-block;
+            float: left;
             font-size: 22px;
-            margin-top: 10px;
-            margin-left: 20px; 
+            text-align: center;
+        
         }
 
 
        .navbar .toggler-navbar {
-         display: flex;
-    
+        display: block;
 }    
+        .navbar .theme-switch-wrapper {
+            
+            float: right;
+            padding-right: 30px;
+            padding-top: 3px;
+            
+            
+            
+        }
         .active {
             display: block;
         }
         
         /*----------- Hamburger menu ---------*/: 
-
-
-.hamburger-menu {
-    
-    width: 30px;
-    height: 30px;
-    -webkit-transform: rotate(0deg);
+.hamburger-menu
+{
+	float : right;
+	padding : 2px 6px;
+	line-height : 1;
+	background-color : var(--bg-menu-baris);
+	border : 1px;
+	border-radius : 5px;
+	display : inline-block;
+	cursor : pointer;
+	    -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -181,15 +198,17 @@ body
     cursor: pointer;
 }
 
+
 .hamburger-menu span {
     display: block;
-    position: absolute;
+    position: absolute  ;
     height: 3px;
-    width: 100%;
+    width: 30px;
     background: white;
     border-radius: 9px;
     opacity: 1;
-    left: 0;
+    margin-top: 10px;
+    right: 10px;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
@@ -233,8 +252,9 @@ body
     transform: rotate(-135deg);
 }
 
+.
 
-/*---- tombol ganti tema ----- */
+/*---- wrapper toggle ganti tema----- */
 .theme-switch-wrapper {
 display: flex;
 align-items: center;
@@ -308,7 +328,7 @@ input:checked + .slider:before {
       /*-------- wrapper atau pembungkus---------------------*/
 
 #outer-wrapper {background: var(--default-bg-color); width: 98%; padding: 3px; margin: 3px auto;}
-#header-wrapper {background: var(--default-bg-color); width: 100%; height:auto; margin: 0 auto; border:1px solid #eaeaea;}
+#header-wrapper { background: var(--default-bg-color); width: 100%; height:auto; margin: 0 auto; border:1px solid #eaeaea;}
 #sidebar-wrapper {background: transparent; width:30%; border:1px solid #eaeaea; margin:10px 0;}
 #content-wrapper {background: transparent; width:65%; float:left; border:1px solid #eaeaea; margin:10px 0;}
 #footer-wrapper {background:transparent; width:100%; border:1px solid #eaeaea; margin:10px 0;}
@@ -371,21 +391,26 @@ input:checked + .slider:before {
 <body>
 <div id='outer-wrapper'>
 <div id='header-wrapper'>
+
 <nav class="navbar">
-  <a class="toggler-navbar">
-            <div class="hamburger-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </a>
-        <a href="#" class="logo">Scream0</a>
+<a href="#" class="logo">Scream0</a>
+
 <div class="theme-switch-wrapper">
 <label class="theme-switch" for="checkbox">
 <input type="checkbox" id="checkbox" />
 <div class="slider round"></div>
 </label>
 </div>
+
+  <div class="toggler-navbar">
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+        </div>
+
         <ul class="main-nav" id="js-menu">
             <li>
                 <a href="#" class="nav-links">Home</a>
@@ -403,7 +428,7 @@ input:checked + .slider:before {
                 <a href="#" class="nav-links">Blog</a>
             </li>
         </ul>
-        
+
     </nav>
     
 </div>

@@ -16,7 +16,7 @@ for (let i = 0; i < aBtn.length ; i++){
              var successful = document.execCommand('copy');
        
              var msg = successful ? alert('dicopy')
-               : alert('woii eror');
+               : alert('error woiii');
              console.log('Copy email command was ' + msg);
             } catch (err) {
              console.log('Oops, unable to copy');

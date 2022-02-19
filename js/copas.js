@@ -1,25 +1,23 @@
-var aBtn = document.querySelectorAll('#btn-copy');
+let copyBtn = document.querySelectorAll('#btn-copy');
 
 
-for (let i = 0; i < aBtn.length ; i++){
+for (let i = 0; i < copyBtn.length ; i++){
     
- aBtn[i].addEventListener(
+ copyBtn[i].addEventListener(
            'click',
            function(event) {
-               var precode = document.querySelectorAll('code')[i];
-     var copyCode = querySelectorFrom("#code-to-copy",precode);
-         var range = document.createRange();
+               let precode = document.querySelectorAll('code')[i];
+     let copyCode = querySelectorFrom("#code-to-copy",precode);
+         let range = document.createRange();
             range.selectNode(precode);
             window.getSelection().addRange(range);
             try { // Now that we've selected the anchor text, execute the copy command 
        
-             var successful = document.execCommand('copy');
+             let successful = document.execCommand('copy');
        
-             var msg = successful ? alert('dicopy')
+             let msg = successful ? alert('dicopy')
                : alert('error woiii');
-             console.log('Copy email command was ' + msg);
             } catch (err) {
-             console.log('Oops, unable to copy');
        
             }
             // Remove the selections - NOTE: Should use // removeRange(range) when it is supported
@@ -29,9 +27,9 @@ for (let i = 0; i < aBtn.length ; i++){
 };
 
 function querySelectorFrom(selector, elements){
-  var all = document.querySelectorAll(selector);
-  var temp = [];
-  for(var i =0; i< elements.length;i++){
+  let all = document.querySelectorAll(selector);
+  let temp = [];
+  for(let i =0; i< elements.length;i++){
     if(Array.prototype.indexOf.call(all,elements[i])!==-1){
     temp.push(elements[i]);
     }

@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     
         draw() {
-            ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha})`;
+            ctx.fillStyle = `rgba(255, 255, 0, ${this.alpha})`;
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             ctx.fill();

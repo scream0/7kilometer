@@ -1,4 +1,4 @@
-<script type='text/javascript'>
+
 // <![CDATA[
 var colour="#52D8ED";
 var sparkles=100;
@@ -153,5 +153,5 @@ div.style.backgroundColor=colour;
 return (div);
 }
 // ]]>
-</script>
+
     
